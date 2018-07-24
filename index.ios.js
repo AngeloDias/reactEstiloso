@@ -1,53 +1,46 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React from 'react';
+import {Text, AppRegistry, View} from 'react-native';
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+const Estilos = {
+  conteudo1: {
+    fontSize: 40,
+    backgroundColor: '#08509B',
+    // paddingTop: 15,
+    // color: '#fff',
+    // fontStyle: 'italic',
+    // fontWeight: 'bold' // ou valores entre 100 e 900
+    // textAlign: 'center'
+    // textDecorationLine: 'underline line-through'
+    height: 60,
+    width: 60
+  },
 
-export default class reactEstiloso extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
+  conteudo2: {
+    fontSize: 40,
+    backgroundColor: '#2A48FA',
+    height: 60,
+    width: 60
+  },
+
+  principal: {
+    backgroundColor: 'skyblue',
+    height: 300,
+    justifyContent: 'space-around',
+    alignItems: 'stretch',
+    flexDirection: 'row'
   }
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+const App = () => {
+  const {conteudo1, principal} = Estilos;
 
-AppRegistry.registerComponent('reactEstiloso', () => reactEstiloso);
+  return (
+    <View style={principal}>
+      <Text style={conteudo1}>A</Text>
+      <Text style={conteudo2}>B</Text>
+      <Text style={conteudo1}>C</Text>
+    </View>
+  );
+};
+
+AppRegistry.registerComponent('reactEstiloso', () => App);
