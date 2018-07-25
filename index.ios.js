@@ -1,57 +1,29 @@
 import React from 'react';
-import {Text, AppRegistry, View} from 'react-native';
+import {Text, AppRegistry, View, Button} from 'react-native';
 
 const Estilos = {
   principal: {
-    backgroundColor: 'cornflowerblue',
-    flex: 1 // vai preencher o espaço na proporção que é passada, no caso 1:1
-    // height: 300,
-    // justifyContent: 'space-around',
-    // alignItems: 'stretch',
-    // flexDirection: 'row'
-  },
-
-  topo: {
-    // fontSize: 40,
-    backgroundColor: 'brown',
-    flex: 2 // 2:7 porque divide espaço com os outros elementos, a partir do valor passado para cada, dentro do principal
-    // paddingTop: 15,
-    // color: '#fff',
-    // fontStyle: 'italic',
-    // fontWeight: 'bold' // ou valores entre 100 e 900
-    // textAlign: 'center'
-    // textDecorationLine: 'underline line-through'
-    // height: 60,
-    // width: 60
-  },
-
-  conteudo: {
-    // fontSize: 40,
-    backgroundColor: 'yellowgreen',
-    flex: 4
-    // height: 60,
-    // width: 60
-  },
-
-  rodape: {
-    // fontSize: 40,
-    backgroundColor: 'orangered',
-    flex: 1
-    // height: 60,
-    // width: 60
+    paddingTop: 40
   }
 };
 
 const App = () => {
-  const {topo, principal, conteudo, rodape} = Estilos;
+  const {principal} = Estilos;
 
   return (
     <View style={principal}>
-      <Text style={topo}>Topo</Text>
-      <Text style={conteudo}>Conteúdo</Text>
-      <Text style={rodape}>Rodapé</Text>
+      <Button
+          title="Clique aqui"
+          color="#841584"
+          accessibilityLabel="Clique para abrir as notícias"
+          onPress={botaoPressionado}/>
     </View>
   );
+
+};
+
+const botaoPressionado = () => {
+  alert('Botão pressionado');
 };
 
 AppRegistry.registerComponent('reactEstiloso', () => App);
