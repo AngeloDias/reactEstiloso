@@ -12,7 +12,11 @@ const App = () => {
 
   return (
     <View style={principal}>
-      <Image source={require('./imgs/uvas.png')} />
+
+      <Image
+        source={ {uri: 'https://facebook.github.io/react/logo-og.png'} }
+        style={{width: 300, height: 300}} />
+
     </View>
   );
 
