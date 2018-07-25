@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, AppRegistry, View, Image, TouchableOpacity} from 'react-native';
+import {Text, AppRegistry, View, Image, TouchableOpacity, Alert} from 'react-native';
 
 const Estilos = {
   principal: {
@@ -31,7 +31,9 @@ const App = () => {
     <View style={principal}>
       <Image source={ require('./imgs/logo.png') } />
 
-      <TouchableOpacity style={botao}>
+      <TouchableOpacity style={botao}
+          onPress={gerarNovaFrase}>
+
         <Text style={textoBotao}>Nova frase</Text>
       </TouchableOpacity>
 
@@ -41,6 +43,17 @@ const App = () => {
 
 };
 
-const botaoPressionado = () => {}
+const gerarNovaFrase = () => {
+  var numeroRandom = Math.floor(Math.random() * 5);
+
+  var frases = Array();
+  frases[0] = 'Ora et labora';
+  frases[1] = 'Vamo que vamo!';
+  frases[2] = 'Simbora!';
+  frases[3] = 'Let\'s go!';
+  frases[4] = 'Levanta daí, sacode a poeira e põe-se a caminhar.';
+
+  Alert.alert(frases[numeroRandom]);
+}
 
 AppRegistry.registerComponent('reactEstiloso', () => App);
