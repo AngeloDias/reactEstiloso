@@ -1,29 +1,41 @@
 import React from 'react';
-import {Text, AppRegistry, View, Button} from 'react-native';
+import {Text, AppRegistry, View, TouchableOpacity} from 'react-native';
 
 const Estilos = {
   principal: {
     paddingTop: 40
+  },
+
+  botao: {
+    backgroundColor: '#48BBEC',
+    padding: 10,
+    borderColor: '#1d8eb8',
+    borderWidth: 3,
+    borderRadius: 8,
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.4
+  },
+
+  textoBotao: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    alignSelf: 'center'
   }
 };
 
 const App = () => {
-  const {principal} = Estilos;
+  const {principal, botao, textoBotao} = Estilos;
 
   return (
     <View style={principal}>
-      <Button
-          title="Clique aqui"
-          color="#841584"
-          accessibilityLabel="Clique para abrir as notícias"
-          onPress={botaoPressionado}/>
+      <TouchableOpacity style={botao}>
+        <Text style={textoBotao}>Clique aqui</Text>
+      </TouchableOpacity>
     </View>
   );
 
-};
-
-const botaoPressionado = () => {
-  alert('Botão pressionado');
 };
 
 AppRegistry.registerComponent('reactEstiloso', () => App);
