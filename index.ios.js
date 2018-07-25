@@ -1,32 +1,46 @@
 import React from 'react';
-import {Text, AppRegistry, View, Image} from 'react-native';
+import {Text, AppRegistry, View, Image, TouchableOpacity} from 'react-native';
 
 const Estilos = {
   principal: {
-    paddingTop: 40
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 
-  imagem: {
-    justifyContent: 'flex-end',
-    padding: 5
+  botao: {
+    backgroundColor: '#538530',
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    marginTop: 20
+  },
+
+  textoBotao: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold'
   }
+
 };
 
 const App = () => {
-  const {principal, imagem} = Estilos;
+  const {principal, botao, textoBotao} = Estilos;
 
   return (
 
-    <View style={principal, imagem}>
+    <View style={principal}>
+      <Image source={ require('./imgs/logo.png') } />
 
-      <Image source={require('./imgs/uvas.png')}>
-        <Text>Legenda para a foto</Text>
-      </Image>
+      <TouchableOpacity style={botao}>
+        <Text style={textoBotao}>Nova frase</Text>
+      </TouchableOpacity>
 
     </View>
 
   );
 
 };
+
+const botaoPressionado = () => {}
 
 AppRegistry.registerComponent('reactEstiloso', () => App);
